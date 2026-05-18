@@ -1,0 +1,209 @@
+<%- include('head', { title: title }) %>
+<%- include('navbar') %>
+
+<!-- ===================== HERO SECTION ===================== -->
+<section class="hero-section" id="home">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow hero-glow--1"></div>
+  <div class="hero-glow hero-glow--2"></div>
+
+  <div class="container h-100">
+    <div class="row h-100 align-items-center justify-content-between gy-5">
+
+      <div class="col-lg-7 hero-content reveal-left">
+        <p class="hero-greeting">
+          <span class="mono-text"><i class="fa-solid fa-location-dot me-2"></i>Dehradun, India</span>
+        </p>
+        <h1 class="hero-name">Suraj <span class="text-accent">Singh</span></h1>
+        <h2 class="hero-role">
+          I'm a <span class="typed-text" id="typedText"></span><span class="typed-cursor">|</span>
+        </h2>
+        <p class="hero-bio">
+          Detail-oriented B.Tech CSE graduate building responsive MERN applications,
+          Laravel projects, and data analytics dashboards with clean, practical solutions.
+        </p>
+
+        <div class="hero-socials mb-4">
+          <a href="https://www.linkedin.com/in/suraj-singh-5079563a6" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:panwarsurajsingh336@gmail.com" class="social-btn" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="tel:+917900405730" class="social-btn" aria-label="Phone">
+            <i class="fa-solid fa-phone"></i>
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener" class="social-btn" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+
+        <div class="hero-ctas d-flex flex-wrap gap-3">
+          <a href="/contact" class="btn btn-accent btn-lg">
+            <i class="fa-solid fa-paper-plane me-2"></i>Hire Me
+          </a>
+          <a href="/projects" class="btn btn-outline-light btn-lg">
+            <i class="fa-solid fa-diagram-project me-2"></i>View Projects
+          </a>
+          <a href="https://flowcv.com/resume/51dac8svrjms" class="btn btn-outline-accent btn-lg" target="_blank" rel="noopener">
+            <i class="fa-solid fa-eye me-2"></i>Show CV
+          </a>
+          <a href="/resume/suraj-singh-resume.pdf" class="btn btn-ghost btn-lg" download="Suraj-Singh-Resume.pdf">
+            <i class="fa-solid fa-download me-2"></i>Download CV
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 text-center reveal-right">
+        <div class="hero-avatar-wrapper">
+          <div class="hero-avatar-ring"></div>
+          <div class="hero-avatar">
+            <img src="/photo.png" alt="Suraj Singh profile photo" class="profile-photo profile-photo--hero" />
+          </div>
+          <div class="floating-badge floating-badge--1">
+            <i class="fa-brands fa-react"></i> React.js
+          </div>
+          <div class="floating-badge floating-badge--2">
+            <i class="fa-brands fa-node-js"></i> Node.js
+          </div>
+          <div class="floating-badge floating-badge--3">
+            <i class="fa-solid fa-chart-line"></i> Power BI
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <a href="#quick-stats" class="scroll-indicator" aria-label="Scroll to portfolio stats">
+    <i class="fa-solid fa-chevron-down"></i>
+  </a>
+</section>
+
+<!-- ===================== QUICK STATS ===================== -->
+<section class="section-dark py-5" id="quick-stats">
+  <div class="container">
+    <div class="row g-4 text-center">
+      <div class="col-6 col-md-3 reveal">
+        <div class="stat-card">
+          <span class="stat-number" data-count="2">0</span>
+          <p class="stat-label">Internships</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 reveal">
+        <div class="stat-card">
+          <span class="stat-number" data-count="6">0</span><span class="stat-suffix">+</span>
+          <p class="stat-label">Projects Built</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 reveal">
+        <div class="stat-card">
+          <span class="stat-number" data-count="18">0</span><span class="stat-suffix">+</span>
+          <p class="stat-label">Technical Skills</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 reveal">
+        <div class="stat-card">
+          <span class="stat-number" data-count="4">0</span>
+          <p class="stat-label">Education Milestones</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FEATURED SKILLS ===================== -->
+<section class="section-darker py-5">
+  <div class="container">
+    <div class="section-header text-center mb-5 reveal">
+      <span class="section-tag">Core Stack</span>
+      <h2 class="section-title">Technologies I Work With</h2>
+    </div>
+    <div class="row g-3 justify-content-center">
+      <% const skills = [
+        { icon: 'fa-brands fa-html5', name: 'HTML', color: '#e34f26' },
+        { icon: 'fa-brands fa-css3-alt', name: 'CSS', color: '#1572b6' },
+        { icon: 'fa-brands fa-js', name: 'JavaScript', color: '#f7df1e' },
+        { icon: 'fa-brands fa-react', name: 'React.js', color: '#61dafb' },
+        { icon: 'fa-brands fa-node-js', name: 'Node.js', color: '#339933' },
+        { icon: 'fa-solid fa-server', name: 'Express.js', color: '#00d4ff' },
+        { icon: 'fa-solid fa-database', name: 'MongoDB', color: '#47a248' },
+        { icon: 'fa-brands fa-python', name: 'Python', color: '#ffd43b' },
+        { icon: 'fa-solid fa-chart-simple', name: 'Power BI', color: '#f2c811' },
+        { icon: 'fa-brands fa-laravel', name: 'Laravel', color: '#ff2d20' }
+      ] %>
+      <% skills.forEach(function(skill) { %>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 reveal">
+        <div class="skill-chip">
+          <i class="<%= skill.icon %>" style="color: <%= skill.color %>"></i>
+          <span><%= skill.name %></span>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+    <div class="text-center mt-4 reveal">
+      <a href="/skills" class="btn btn-accent">View All Skills <i class="fa-solid fa-arrow-right ms-2"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FEATURED PROJECTS ===================== -->
+<section class="section-dark py-5">
+  <div class="container">
+    <div class="section-header text-center mb-5 reveal">
+      <span class="section-tag">Portfolio</span>
+      <h2 class="section-title">Featured Projects</h2>
+    </div>
+    <div class="row g-4">
+      <% const projects = [
+        { title: 'Online Food Delivery Website', desc: 'Responsive food ordering interface with product browsing, cart flow, and user-focused layouts.', tags: ['React.js', 'Node.js', 'MongoDB'], color: '#22c55e', icon: 'fa-solid fa-utensils' },
+        { title: 'CRUD Website', desc: 'Full-stack create, read, update, and delete workflow with clean forms and backend data handling.', tags: ['Node.js', 'Express.js', 'MongoDB'], color: '#00d4ff', icon: 'fa-solid fa-table-list' },
+        { title: 'E-Commerce Sales Analysis', desc: 'Data analytics project for sales trends, KPI tracking, and business insights using Python and Power BI.', tags: ['Python', 'Excel', 'Power BI'], color: '#f59e0b', icon: 'fa-solid fa-chart-line' }
+      ] %>
+      <% projects.forEach(function(p) { %>
+      <div class="col-md-4 reveal">
+        <div class="project-card h-100">
+          <div class="project-card__img" style="background: linear-gradient(135deg, <%= p.color %>44, <%= p.color %>22);">
+            <div class="project-card__icon" style="color: <%= p.color %>">
+              <i class="<%= p.icon %>"></i>
+            </div>
+          </div>
+          <div class="project-card__body">
+            <h5 class="project-card__title"><%= p.title %></h5>
+            <p class="project-card__desc"><%= p.desc %></p>
+            <div class="project-card__tags mb-3">
+              <% p.tags.forEach(function(tag) { %><span class="tag"><%= tag %></span><% }) %>
+            </div>
+            <div class="d-flex gap-2">
+              <a href="https://github.com" target="_blank" rel="noopener" class="btn btn-sm btn-outline-accent">
+                <i class="fa-brands fa-github me-1"></i>GitHub
+              </a>
+              <a href="#" class="btn btn-sm btn-accent">
+                <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>Demo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+    <div class="text-center mt-5 reveal">
+      <a href="/projects" class="btn btn-accent btn-lg">
+        View All Projects <i class="fa-solid fa-arrow-right ms-2"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA BANNER ===================== -->
+<section class="cta-banner py-5 reveal">
+  <div class="container text-center">
+    <h2 class="cta-title">Have a web app or analytics idea?</h2>
+    <p class="cta-sub">I can help turn it into a responsive product, useful dashboard, or clean backend workflow.</p>
+    <a href="/contact" class="btn btn-accent btn-lg mt-3">
+      <i class="fa-solid fa-rocket me-2"></i>Let's Talk
+    </a>
+  </div>
+</section>
+
+<%- include('footer') %>

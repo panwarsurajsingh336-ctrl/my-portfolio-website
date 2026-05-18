@@ -1,0 +1,149 @@
+<%- include('head', { title: title }) %>
+<%- include('navbar') %>
+
+<!-- Page hero -->
+<div class="page-hero">
+  <div class="container text-center">
+    <h1 class="page-hero__title reveal">About <span class="text-accent">Me</span></h1>
+    <p class="page-hero__sub reveal">MERN Stack Developer with a strong data analytics foundation</p>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active">About</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<!-- About content -->
+<section class="section-dark py-5">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+
+      <div class="col-lg-4 text-center reveal-left">
+        <div class="about-avatar-wrapper">
+          <div class="about-avatar">
+            <img src="/photo.png" alt="Suraj Singh profile photo" class="profile-photo profile-photo--about" />
+          </div>
+          <div class="about-avatar__badge">
+            <i class="fa-solid fa-circle-check"></i> Available for Hire
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8 reveal-right">
+        <span class="section-tag">Professional Summary</span>
+        <h2 class="section-title mt-2">Developer focused on <span class="text-accent">web applications</span> and data insights</h2>
+        <p class="about-bio">
+          Detail-oriented B.Tech CSE graduate and MERN Stack Developer with hands-on
+          experience in scalable web applications and data analytics. Skilled in React.js,
+          Node.js, Express.js, MongoDB, SQL, Python, Power BI, and Laravel.
+        </p>
+        <p class="about-bio">
+          I enjoy building clean interfaces, reliable APIs, database-backed features, and
+          practical analytics reports that help teams understand data and make better decisions.
+        </p>
+
+        <div class="row g-3 mt-3">
+          <div class="col-sm-6">
+            <div class="info-item">
+              <i class="fa-solid fa-user text-accent"></i>
+              <div>
+                <span class="info-label">Name</span>
+                <span class="info-value">Suraj Singh</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="info-item">
+              <i class="fa-solid fa-envelope text-accent"></i>
+              <div>
+                <span class="info-label">Email</span>
+                <a href="mailto:panwarsurajsingh336@gmail.com" class="info-value">panwarsurajsingh336@gmail.com</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="info-item">
+              <i class="fa-solid fa-phone text-accent"></i>
+              <div>
+                <span class="info-label">Phone</span>
+                <a href="tel:+917900405730" class="info-value">+91 7900405730</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="info-item">
+              <i class="fa-solid fa-location-dot text-accent"></i>
+              <div>
+                <span class="info-label">Location</span>
+                <span class="info-value">Dehradun, India</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="info-item">
+              <i class="fa-solid fa-graduation-cap text-accent"></i>
+              <div>
+                <span class="info-label">Degree</span>
+                <span class="info-value">B.Tech CSE</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="info-item">
+              <i class="fa-brands fa-linkedin text-accent"></i>
+              <div>
+                <span class="info-label">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/suraj-singh-5079563a6" target="_blank" rel="noopener" class="info-value">suraj-singh-5079563a6</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="/contact" class="btn btn-accent">
+            <i class="fa-solid fa-envelope me-2"></i>Contact Me
+          </a>
+          <a href="https://flowcv.com/resume/51dac8svrjms" target="_blank" rel="noopener" class="btn btn-outline-accent">
+            <i class="fa-solid fa-eye me-2"></i>Show CV
+          </a>
+          <a href="/resume/suraj-singh-resume.pdf" download="Suraj-Singh-Resume.pdf" class="btn btn-outline-accent">
+            <i class="fa-solid fa-download me-2"></i>Download CV
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Focus areas -->
+<section class="section-darker py-5">
+  <div class="container">
+    <div class="section-header text-center mb-5 reveal">
+      <span class="section-tag">Focus Areas</span>
+      <h2 class="section-title">How I Build</h2>
+    </div>
+    <div class="row g-4">
+      <% const values = [
+        { icon: 'fa-solid fa-layer-group', title: 'Full-Stack Thinking', desc: 'I connect frontend UX, backend APIs, and databases into complete working features.' },
+        { icon: 'fa-solid fa-chart-pie', title: 'Data-Driven Work', desc: 'I use Python, Excel, SQL, and Power BI to turn raw data into understandable insights.' },
+        { icon: 'fa-solid fa-code', title: 'Clean Implementation', desc: 'I prefer readable code, reusable components, and practical architecture over unnecessary complexity.' },
+        { icon: 'fa-solid fa-people-group', title: 'Team Collaboration', desc: 'My internship experience taught me to communicate clearly and move steadily with teams.' }
+      ] %>
+      <% values.forEach(function(v) { %>
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="value-card">
+          <div class="value-card__icon">
+            <i class="<%= v.icon %>"></i>
+          </div>
+          <h5 class="value-card__title"><%= v.title %></h5>
+          <p class="value-card__desc"><%= v.desc %></p>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('footer') %>

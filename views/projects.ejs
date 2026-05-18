@@ -1,0 +1,196 @@
+<%- include('head', { title: title }) %>
+<%- include('navbar') %>
+
+<!-- Page hero -->
+<div class="page-hero">
+  <div class="container text-center">
+    <h1 class="page-hero__title reveal">My <span class="text-accent">Projects</span></h1>
+    <p class="page-hero__sub reveal">Web development, MERN, Laravel, and data analytics work</p>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active">Projects</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<!-- Projects grid -->
+<section class="section-dark py-5">
+  <div class="container">
+
+    <div class="text-center mb-5 reveal">
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="mern">MERN</button>
+        <button class="filter-tab" data-filter="node">Node.js</button>
+        <button class="filter-tab" data-filter="fullstack">Full Stack</button>
+        <button class="filter-tab" data-filter="web">Web Development</button>
+      </div>
+    </div>
+
+    <div class="row g-4" id="projectsGrid">
+
+      <% const projects = [
+        {
+          title: 'Online Food Delivery Website',
+          desc: 'A responsive food delivery website with product browsing, cart flow, and user-friendly ordering screens.',
+          tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
+          features: ['Product browsing', 'Cart flow', 'Responsive ordering UI'],
+          filters: ['web', 'mern', 'node', 'fullstack'],
+          color: '#22c55e',
+          icon: 'fa-solid fa-utensils',
+          github: 'https://github.com',
+          demo: '#'
+        },
+        {
+          title: 'Weather Website',
+          desc: 'A clean weather app that shows current weather information using API data and responsive JavaScript UI.',
+          tags: ['HTML', 'CSS', 'JavaScript', 'API'],
+          features: ['Live API data', 'Current weather details', 'Responsive layout'],
+          filters: ['web'],
+          color: '#00d4ff',
+          icon: 'fa-solid fa-cloud-sun',
+          github: 'https://github.com',
+          demo: '#'
+        },
+        {
+          title: 'To-Do List App',
+          desc: 'Task management app with add, complete, delete, and persistent list interactions for daily productivity.',
+          tags: ['React.js', 'JavaScript', 'CSS'],
+          features: ['Add and delete tasks', 'Complete task status', 'Persistent list interactions'],
+          filters: ['web'],
+          color: '#7c3aed',
+          icon: 'fa-solid fa-list-check',
+          github: 'https://github.com',
+          demo: '#'
+        },
+        {
+          title: 'CRUD Website',
+          desc: 'Full-stack CRUD project for managing records through forms, backend routes, and database operations.',
+          tags: ['Laravel', 'PHP', 'MySQL', 'Bootstrap'],
+          features: ['Create and edit records', 'Backend routes', 'Database operations'],
+          filters: ['web', 'fullstack'],
+          color: '#ff2d20',
+          icon: 'fa-solid fa-table-list',
+          github: 'https://github.com',
+          demo: '#'
+        },
+        {
+          title: 'Calculator',
+          desc: 'Lightweight calculator with keyboard-friendly arithmetic operations and a simple responsive interface.',
+          tags: ['HTML', 'CSS', 'JavaScript'],
+          features: ['Basic arithmetic', 'Keyboard-friendly input', 'Responsive interface'],
+          filters: ['web'],
+          color: '#f59e0b',
+          icon: 'fa-solid fa-calculator',
+          github: 'https://github.com',
+          demo: '#'
+        },
+        {
+          title: 'E-Commerce Sales Analysis',
+          desc: 'Sales analytics project focused on revenue trends, product performance, and dashboard-ready business insights.',
+          tags: ['Python', 'Pandas', 'Excel', 'Power BI'],
+          features: ['Revenue trends', 'Product performance', 'Business dashboard insights'],
+          filters: ['data'],
+          color: '#10b981',
+          icon: 'fa-solid fa-chart-line',
+          github: 'https://github.com',
+          demo: '#'
+        },
+        {
+          title: 'Online Voting System',
+          desc: 'A secure online voting platform where users can register, log in, view candidates, cast one vote, and see voting results.',
+          tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Bootstrap'],
+          features: ['JWT authentication', 'One vote per user', 'Admin election management', 'Result dashboard'],
+          filters: ['mern', 'node', 'fullstack', 'web'],
+          color: '#0ea5e9',
+          icon: 'fa-solid fa-square-poll-vertical',
+          github: '#',
+          demo: '#'
+        },
+        {
+          title: 'Online Banking System',
+          desc: 'A banking web application for account dashboards, balance checks, deposits, withdrawals, fund transfers, and transaction history.',
+          tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Bootstrap'],
+          features: ['User authentication', 'Deposit and withdrawal', 'Fund transfer', 'Transaction history'],
+          filters: ['mern', 'node', 'fullstack', 'web'],
+          color: '#14b8a6',
+          icon: 'fa-solid fa-building-columns',
+          github: '#',
+          demo: '#'
+        },
+        {
+          title: 'Online Hotel Booking System',
+          desc: 'A hotel booking platform where users can search hotels, view room details, book rooms, and manage bookings.',
+          tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Bootstrap'],
+          features: ['Room availability check', 'Booking confirmation', 'User booking history', 'Admin room management'],
+          filters: ['mern', 'node', 'fullstack', 'web'],
+          color: '#ec4899',
+          icon: 'fa-solid fa-hotel',
+          github: '#',
+          demo: '#'
+        }
+      ] %>
+
+      <% projects.forEach(function(p) { %>
+      <div class="col-md-6 col-lg-4 reveal project-item" data-filter="<%= p.filters.join(' ') %>">
+        <div class="project-card h-100">
+          <div class="project-card__img" style="background: linear-gradient(135deg, <%= p.color %>33, <%= p.color %>11);">
+            <div class="project-card__icon" style="color:<%= p.color %>">
+              <i class="<%= p.icon %>"></i>
+            </div>
+            <div class="project-card__overlay">
+              <a href="<%= p.github %>" target="_blank" rel="noopener" class="btn btn-sm btn-outline-light me-2" aria-label="<%= p.title %> GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="<%= p.demo %>" class="btn btn-sm btn-accent" aria-label="<%= p.title %> live demo">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card__body">
+            <h5 class="project-card__title"><%= p.title %></h5>
+            <p class="project-card__desc"><%= p.desc %></p>
+            <div class="project-card__tags">
+              <% p.tags.forEach(function(tag) { %>
+              <span class="tag"><%= tag %></span>
+              <% }) %>
+            </div>
+            <ul class="project-card__features">
+              <% p.features.forEach(function(feature) { %>
+              <li><i class="fa-solid fa-check"></i><%= feature %></li>
+              <% }) %>
+            </ul>
+          </div>
+
+          <div class="project-card__footer">
+            <a href="<%= p.github %>" target="_blank" rel="noopener" class="btn btn-sm btn-outline-accent w-50">
+              <i class="fa-brands fa-github me-1"></i>GitHub
+            </a>
+            <a href="<%= p.demo %>" class="btn btn-sm btn-accent w-50">
+              <i class="fa-solid fa-globe me-1"></i>Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+
+    </div>
+  </div>
+</section>
+
+<!-- Project CTA -->
+<section class="section-darker py-5">
+  <div class="container text-center reveal">
+    <i class="fa-solid fa-code-branch" style="font-size: 3rem; color: var(--accent)"></i>
+    <h3 class="mt-3">More work coming soon</h3>
+    <p class="text-muted">GitHub and live demo URLs can be replaced with final project links whenever they are ready.</p>
+    <a href="/contact" class="btn btn-accent mt-2">
+      <i class="fa-solid fa-paper-plane me-2"></i>Discuss a Project
+    </a>
+  </div>
+</section>
+
+<%- include('footer') %>

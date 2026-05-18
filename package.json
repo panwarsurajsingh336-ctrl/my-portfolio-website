@@ -1,0 +1,23 @@
+{
+  "name": "porthfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node scripts/validate.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.16.0",
+    "dotenv": "^17.4.2",
+    "ejs": "^5.0.2",
+    "express": "^5.2.1",
+    "multer": "^2.1.1",
+    "mysql": "^2.18.1",
+    "nodemailer": "^8.0.7"
+  }
+}

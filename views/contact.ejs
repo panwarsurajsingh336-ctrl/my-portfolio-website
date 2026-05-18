@@ -1,0 +1,191 @@
+<%- include('head', { title: title }) %>
+<%- include('navbar') %>
+<% const contactData = typeof formData !== 'undefined' ? formData : {}; %>
+
+<!-- Page hero -->
+<div class="page-hero">
+  <div class="container text-center">
+    <h1 class="page-hero__title reveal">Get In <span class="text-accent">Touch</span></h1>
+    <p class="page-hero__sub reveal">Send a project idea, internship opportunity, or collaboration note</p>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active">Contact</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<!-- Contact section -->
+<section class="section-dark py-5">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+
+      <div class="col-lg-4 reveal-left">
+        <div class="contact-profile-card mb-4">
+          <img src="/photo.png" alt="Suraj Singh profile photo" class="profile-photo profile-photo--contact" />
+          <div>
+            <h3 class="contact-profile-card__name">Suraj Singh</h3>
+            <p class="contact-profile-card__role">MERN Stack Developer</p>
+          </div>
+        </div>
+
+        <h3 class="mb-4">Let's <span class="text-accent">Connect</span></h3>
+        <p class="text-muted mb-4">
+          I am open to MERN stack, Laravel, web development, and data analytics opportunities.
+          Share your message and I will respond as soon as possible.
+        </p>
+
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <span class="contact-info-label">Email</span>
+              <a href="mailto:panwarsurajsingh336@gmail.com" class="contact-info-value">panwarsurajsingh336@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+              <span class="contact-info-label">Phone</span>
+              <a href="tel:+917900405730" class="contact-info-value">+91 7900405730</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <span class="contact-info-label">Location</span>
+              <span class="contact-info-value">Dehradun, India</span>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+            <div>
+              <span class="contact-info-label">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/suraj-singh-5079563a6" target="_blank" rel="noopener" class="contact-info-value">suraj-singh-5079563a6</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <p class="text-muted mb-3">Quick links:</p>
+          <div class="social-icons social-icons--lg">
+            <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/suraj-singh-5079563a6" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:panwarsurajsingh336@gmail.com" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8 reveal-right">
+        <div class="contact-form-card">
+          <h4 class="mb-4">Send a Message</h4>
+
+          <% if (success) { %>
+          <div class="alert alert-success d-flex align-items-center gap-2 mb-4" role="alert">
+            <i class="fa-solid fa-circle-check fs-5"></i>
+            <div>
+              <strong>Message sent!</strong> Thank you for reaching out. I will reply soon.
+            </div>
+          </div>
+          <% } %>
+
+          <% if (error) { %>
+          <div class="alert alert-danger d-flex align-items-center gap-2 mb-4" role="alert">
+            <i class="fa-solid fa-triangle-exclamation fs-5"></i>
+            <div><strong>Error:</strong> <%= error %></div>
+          </div>
+          <% } %>
+
+          <form action="/contact" method="POST" novalidate id="contactForm">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control dark-input"
+                    id="name"
+                    name="name"
+                    value="<%= contactData.name || '' %>"
+                    placeholder="Your Name"
+                    required
+                    minlength="2"
+                  />
+                  <label for="name"><i class="fa-solid fa-user me-2 text-accent"></i>Your Name</label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input
+                    type="email"
+                    class="form-control dark-input"
+                    id="email"
+                    name="email"
+                    value="<%= contactData.email || '' %>"
+                    placeholder="Your Email"
+                    required
+                  />
+                  <label for="email"><i class="fa-solid fa-envelope me-2 text-accent"></i>Your Email</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control dark-input"
+                    id="subject"
+                    name="subject"
+                    value="<%= contactData.subject || '' %>"
+                    placeholder="Subject"
+                    required
+                  />
+                  <label for="subject"><i class="fa-solid fa-heading me-2 text-accent"></i>Subject</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea
+                    class="form-control dark-input"
+                    id="message"
+                    name="message"
+                    placeholder="Your Message"
+                    style="height: 160px; resize: none;"
+                    required
+                    minlength="10"
+                  ><%= contactData.message || '' %></textarea>
+                  <label for="message"><i class="fa-solid fa-message me-2 text-accent"></i>Your Message</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="btn btn-accent btn-lg w-100" id="submitBtn">
+                  <i class="fa-solid fa-paper-plane me-2"></i>Send Message
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<%- include('footer') %>

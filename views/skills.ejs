@@ -1,0 +1,136 @@
+<%- include('head', { title: title }) %>
+<%- include('navbar') %>
+
+<!-- Page hero -->
+<div class="page-hero">
+  <div class="container text-center">
+    <h1 class="page-hero__title reveal">My <span class="text-accent">Skills</span></h1>
+    <p class="page-hero__sub reveal">Frontend, backend, databases, analytics, and daily development tools</p>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active">Skills</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<!-- Skill categories -->
+<section class="section-dark py-5">
+  <div class="container">
+    <% const skillGroups = [
+      {
+        title: 'Frontend',
+        icon: 'fa-solid fa-palette',
+        skills: [
+          { name: 'HTML', icon: 'fa-brands fa-html5', pct: 92, color: '#e34f26' },
+          { name: 'CSS', icon: 'fa-brands fa-css3-alt', pct: 88, color: '#1572b6' },
+          { name: 'JavaScript', icon: 'fa-brands fa-js', pct: 86, color: '#f7df1e' },
+          { name: 'Bootstrap', icon: 'fa-brands fa-bootstrap', pct: 84, color: '#7952b3' },
+          { name: 'React.js', icon: 'fa-brands fa-react', pct: 82, color: '#61dafb' }
+        ]
+      },
+      {
+        title: 'Backend',
+        icon: 'fa-solid fa-server',
+        skills: [
+          { name: 'Node.js', icon: 'fa-brands fa-node-js', pct: 84, color: '#339933' },
+          { name: 'Express.js', icon: 'fa-solid fa-route', pct: 80, color: '#00d4ff' },
+          { name: 'PHP', icon: 'fa-brands fa-php', pct: 78, color: '#777bb4' },
+          { name: 'Laravel', icon: 'fa-brands fa-laravel', pct: 76, color: '#ff2d20' }
+        ]
+      },
+      {
+        title: 'Database',
+        icon: 'fa-solid fa-database',
+        skills: [
+          { name: 'MongoDB', icon: 'fa-solid fa-leaf', pct: 82, color: '#47a248' },
+          { name: 'MySQL', icon: 'fa-solid fa-database', pct: 80, color: '#00758f' },
+          { name: 'SQL', icon: 'fa-solid fa-table', pct: 78, color: '#00d4ff' }
+        ]
+      },
+      {
+        title: 'Data Analytics',
+        icon: 'fa-solid fa-chart-line',
+        skills: [
+          { name: 'Python', icon: 'fa-brands fa-python', pct: 82, color: '#ffd43b' },
+          { name: 'Pandas', icon: 'fa-solid fa-table-cells-large', pct: 76, color: '#150458' },
+          { name: 'NumPy', icon: 'fa-solid fa-calculator', pct: 74, color: '#4dabcf' },
+          { name: 'Excel', icon: 'fa-solid fa-file-excel', pct: 84, color: '#21a366' },
+          { name: 'Power BI', icon: 'fa-solid fa-chart-simple', pct: 80, color: '#f2c811' }
+        ]
+      },
+      {
+        title: 'Tools',
+        icon: 'fa-solid fa-screwdriver-wrench',
+        skills: [
+          { name: 'Git', icon: 'fa-brands fa-git-alt', pct: 82, color: '#f05032' },
+          { name: 'GitHub', icon: 'fa-brands fa-github', pct: 84, color: '#ffffff' },
+          { name: 'VS Code', icon: 'fa-solid fa-code', pct: 90, color: '#007acc' }
+        ]
+      }
+    ] %>
+
+    <div class="row g-4">
+      <% skillGroups.forEach(function(group, index) { %>
+      <div class="col-lg-6 reveal <%= index % 2 === 0 ? 'reveal-left' : 'reveal-right' %>">
+        <div class="skills-group h-100">
+          <div class="skills-group__header">
+            <i class="<%= group.icon %> text-accent me-2"></i>
+            <h3><%= group.title %></h3>
+          </div>
+
+          <% group.skills.forEach(function(s) { %>
+          <div class="skill-bar-item mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="skill-bar-name">
+                <i class="<%= s.icon %>" style="color:<%= s.color %>"></i>
+                <%= s.name %>
+              </span>
+              <span class="skill-bar-pct"><%= s.pct %>%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div
+                class="skill-bar-fill"
+                data-pct="<%= s.pct %>"
+                style="background: linear-gradient(90deg, <%= s.color %>, <%= s.color %>aa)"
+              ></div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- Professional strengths -->
+<section class="section-darker py-5">
+  <div class="container">
+    <div class="section-header text-center mb-5 reveal">
+      <span class="section-tag">Beyond Tools</span>
+      <h2 class="section-title">Professional Strengths</h2>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <% const softSkills = [
+        { icon: 'fa-solid fa-comments', title: 'Communication' },
+        { icon: 'fa-solid fa-people-group', title: 'Teamwork' },
+        { icon: 'fa-solid fa-magnifying-glass-chart', title: 'Analytical Thinking' },
+        { icon: 'fa-solid fa-clock', title: 'Time Management' },
+        { icon: 'fa-solid fa-bug-slash', title: 'Debugging' },
+        { icon: 'fa-solid fa-arrows-rotate', title: 'Adaptability' }
+      ] %>
+      <% softSkills.forEach(function(ss) { %>
+      <div class="col-6 col-md-4 col-lg-2 reveal">
+        <div class="soft-card">
+          <i class="<%= ss.icon %>"></i>
+          <span><%= ss.title %></span>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('footer') %>

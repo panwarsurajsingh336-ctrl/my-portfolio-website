@@ -1,0 +1,169 @@
+<%- include('head', { title: title }) %>
+<%- include('navbar') %>
+
+<!-- Page hero -->
+<div class="page-hero">
+  <div class="container text-center">
+    <h1 class="page-hero__title reveal">My <span class="text-accent">Resume</span></h1>
+    <p class="page-hero__sub reveal">Experience, education, and career focus</p>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active">Resume</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<!-- Download CTA -->
+<section class="section-darker py-4">
+  <div class="container text-center reveal">
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      <a href="https://flowcv.com/resume/51dac8svrjms" class="btn btn-outline-accent btn-lg" target="_blank" rel="noopener">
+        <i class="fa-solid fa-eye me-2"></i>Show CV
+      </a>
+      <a href="/resume/suraj-singh-resume.pdf" class="btn btn-accent btn-lg" download="Suraj-Singh-Resume.pdf">
+        <i class="fa-solid fa-download me-2"></i>Download CV
+      </a>
+    </div>
+    <p class="resume-note mt-3 mb-0">
+      Download path: <code>public/resume/suraj-singh-resume.pdf</code>
+    </p>
+  </div>
+</section>
+
+<!-- Experience & Education -->
+<section class="section-dark py-5">
+  <div class="container">
+    <div class="row g-5">
+
+      <div class="col-lg-6 reveal-left">
+        <div class="timeline-header mb-4">
+          <i class="fa-solid fa-briefcase text-accent me-2"></i>
+          <h3>Experience</h3>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">Internship</span>
+              <h5 class="timeline-role">Full Stack Developer Intern</h5>
+              <span class="timeline-company">Dream Tech Pvt. Ltd., Dehradun</span>
+              <p class="timeline-desc">
+                Worked on full-stack web application features, responsive pages,
+                backend workflows, and database-connected functionality.
+              </p>
+              <div class="d-flex flex-wrap gap-2 mt-2">
+                <span class="tag">React.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Express.js</span>
+                <span class="tag">MongoDB</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">Internship</span>
+              <h5 class="timeline-role">Software Developer Intern</h5>
+              <span class="timeline-company">Cairovision Pvt. Ltd., Bengaluru</span>
+              <p class="timeline-desc">
+                Contributed to software development tasks, debugging, UI implementation,
+                and practical problem solving in a team environment.
+              </p>
+              <div class="d-flex flex-wrap gap-2 mt-2">
+                <span class="tag">JavaScript</span>
+                <span class="tag">PHP</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Bootstrap</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 reveal-right">
+        <div class="timeline-header mb-4">
+          <i class="fa-solid fa-graduation-cap text-accent me-2"></i>
+          <h3>Education</h3>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2022 - 2025</span>
+              <h5 class="timeline-role">B.Tech CSE</h5>
+              <span class="timeline-company">VMSB Uttarakhand Technical University Dehradun</span>
+              <p class="timeline-desc">Computer Science and Engineering with focus on software development and web technologies.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2018 - 2021</span>
+              <h5 class="timeline-role">Diploma Mechanical Engineering</h5>
+              <span class="timeline-company">UBTER Roorkee, Uttarakhand</span>
+              <p class="timeline-desc">Built a strong engineering foundation with analytical and technical problem-solving skills.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2016 - 2017</span>
+              <h5 class="timeline-role">Class 12</h5>
+              <span class="timeline-company">Uttarakhand Board of School Education</span>
+              <p class="timeline-desc">Completed senior secondary education.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2014 - 2015</span>
+              <h5 class="timeline-role">Class 10</h5>
+              <span class="timeline-company">Uttarakhand Board of School Education</span>
+              <p class="timeline-desc">Completed secondary education.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Resume highlights -->
+<section class="section-darker py-5">
+  <div class="container">
+    <div class="section-header text-center mb-5 reveal">
+      <span class="section-tag">Highlights</span>
+      <h2 class="section-title">What I Bring</h2>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <% const highlights = [
+        { icon: 'fa-solid fa-code', title: 'MERN Development', desc: 'React.js, Node.js, Express.js, and MongoDB for full-stack web apps.', color: '#61dafb' },
+        { icon: 'fa-brands fa-laravel', title: 'Laravel + PHP', desc: 'Backend and CRUD workflows using Laravel, PHP, MySQL, and Bootstrap.', color: '#ff2d20' },
+        { icon: 'fa-solid fa-chart-line', title: 'Data Analytics', desc: 'Python, Pandas, NumPy, Excel, SQL, and Power BI for reporting insights.', color: '#f59e0b' },
+        { icon: 'fa-solid fa-database', title: 'Database Skills', desc: 'Comfortable with MongoDB, MySQL, and SQL-backed application logic.', color: '#10b981' }
+      ] %>
+      <% highlights.forEach(function(a) { %>
+      <div class="col-sm-6 col-md-3 reveal">
+        <div class="achievement-card text-center">
+          <div class="achievement-icon" style="color:<%= a.color %>">
+            <i class="<%= a.icon %>"></i>
+          </div>
+          <h6 class="achievement-title"><%= a.title %></h6>
+          <p class="achievement-desc"><%= a.desc %></p>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('footer') %>

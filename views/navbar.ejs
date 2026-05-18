@@ -1,0 +1,60 @@
+<!-- Responsive dark navbar with glassmorphism effect -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
+  <div class="container">
+    <!-- Logo / Brand -->
+    <a class="navbar-brand fw-bold" href="/">
+      <span class="brand-logo">SS</span>
+      <span class="brand-name ms-2">Suraj Singh</span>
+      <img src="/photo.png" alt="Suraj Singh" class="navbar-avatar ms-2" />
+    </a>
+
+    <!-- Mobile hamburger -->
+    <button
+      class="navbar-toggler border-0"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navMenu"
+      aria-controls="navMenu"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav links -->
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto gap-1">
+        <li class="nav-item">
+          <a class="nav-link <%= page === 'home' ? 'active' : '' %>" href="/">
+            <i class="fa-solid fa-house me-1"></i>Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <%= page === 'about' ? 'active' : '' %>" href="/about">
+            <i class="fa-solid fa-user me-1"></i>About
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <%= page === 'skills' ? 'active' : '' %>" href="/skills">
+            <i class="fa-solid fa-code me-1"></i>Skills
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <%= page === 'projects' ? 'active' : '' %>" href="/projects">
+            <i class="fa-solid fa-diagram-project me-1"></i>Projects
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <%= page === 'resume' ? 'active' : '' %>" href="/resume">
+            <i class="fa-solid fa-file-lines me-1"></i>Resume
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn-hire ms-2 <%= page === 'contact' ? 'active' : '' %>" href="/contact">
+            <i class="fa-solid fa-envelope me-1"></i>Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
