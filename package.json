@@ -1,11 +1,14 @@
+
 {
   "name": "porthfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "Full Stack Developer portfolio website built with Node.js, Express, EJS, React.js, Laravel, PHP, MySQL, and MongoDB project highlights.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "node scripts/validate.js"
+    "test": "node scripts/validate.js",
+    "build": "vite build",
+    "serve": "vite --host 0.0.0.0"
   },
   "keywords": [],
   "author": "",

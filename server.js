@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const pages = {
-  home: { view: "index", title: "Suraj Singh - MERN Stack Developer" },
+  home: { view: "index", title: "Suraj Singh - Full Stack Developer" },
   about: { view: "about", title: "About - Suraj Singh" },
   skills: { view: "skills", title: "Skills - Suraj Singh" },
   projects: { view: "projects", title: "Projects - Suraj Singh" },

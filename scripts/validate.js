@@ -4,7 +4,7 @@ const path = require("path");
 const viewDir = path.join(__dirname, "..", "views");
 
 const pages = [
-  ["index", { title: "Suraj Singh - MERN Stack Developer", page: "home" }],
+  ["index", { title: "Suraj Singh - Full Stack Developer", page: "home" }],
   ["about", { title: "About - Suraj Singh", page: "about" }],
   ["skills", { title: "Skills - Suraj Singh", page: "skills" }],
   ["projects", { title: "Projects - Suraj Singh", page: "projects" }],

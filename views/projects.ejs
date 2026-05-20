@@ -5,7 +5,7 @@
 <div class="page-hero">
   <div class="container text-center">
     <h1 class="page-hero__title reveal">My <span class="text-accent">Projects</span></h1>
-    <p class="page-hero__sub reveal">Web development, MERN, Laravel, and data analytics work</p>
+    <p class="page-hero__sub reveal">Full stack web development, Laravel, and data analytics work</p>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb justify-content-center">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -22,7 +22,7 @@
     <div class="text-center mb-5 reveal">
       <div class="filter-tabs" id="filterTabs">
         <button class="filter-tab active" data-filter="all">All</button>
-        <button class="filter-tab" data-filter="mern">MERN</button>
+        <button class="filter-tab" data-filter="mern">React + Node</button>
         <button class="filter-tab" data-filter="node">Node.js</button>
         <button class="filter-tab" data-filter="fullstack">Full Stack</button>
         <button class="filter-tab" data-filter="web">Web Development</button>
@@ -33,6 +33,18 @@
 
       <% const projects = [
         {
+          title: 'Online Voting System',
+          desc: 'A secure online voting platform where users can register, log in, view candidates, cast one vote, and see voting results.',
+          tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Bootstrap'],
+          features: ['JWT authentication', 'One vote per user', 'Admin election management', 'Result dashboard'],
+          filters: ['mern', 'node', 'fullstack', 'web'],
+          color: '#0ea5e9',
+          icon: 'fa-solid fa-square-poll-vertical',
+          github: '#',
+          demo: '#'
+        },
+       
+        {
           title: 'Online Food Delivery Website',
           desc: 'A responsive food delivery website with product browsing, cart flow, and user-friendly ordering screens.',
           tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
@@ -41,6 +53,17 @@
           color: '#22c55e',
           icon: 'fa-solid fa-utensils',
           github: 'https://github.com',
+          demo: '#'
+        },
+         {
+          title: 'Online Banking System',
+          desc: 'A banking web application for account dashboards, balance checks, deposits, withdrawals, fund transfers, and transaction history.',
+          tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Bootstrap'],
+          features: ['User authentication', 'Deposit and withdrawal', 'Fund transfer', 'Transaction history'],
+          filters: ['mern', 'node', 'fullstack', 'web'],
+          color: '#14b8a6',
+          icon: 'fa-solid fa-building-columns',
+          github: '#',
           demo: '#'
         },
         {
@@ -55,6 +78,28 @@
           demo: '#'
         },
         {
+          title: 'Online Hotel Booking System',
+          desc: 'A hotel booking platform where users can search hotels, view room details, book rooms, and manage bookings.',
+          tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Bootstrap'],
+          features: ['Room availability check', 'Booking confirmation', 'User booking history', 'Admin room management'],
+          filters: ['mern', 'node', 'fullstack', 'web'],
+          color: '#ec4899',
+          icon: 'fa-solid fa-hotel',
+          github: '#',
+          demo: '#'
+        },
+        {
+          title: 'CRUD Website',
+          desc: 'A full stack Laravel application for managing records through forms, backend routes, and MySQL database operations.',
+          tags: ['Laravel', 'PHP', 'MySQL', 'Bootstrap'],
+          features: ['Create and edit records', 'Backend routes', 'MySQL database operations'],
+          filters: ['web', 'fullstack'],
+          color: '#ff2d20',
+          icon: 'fa-solid fa-table-list',
+          github: 'https://github.com',
+          demo: '#'
+        },
+        {
           title: 'To-Do List App',
           desc: 'Task management app with add, complete, delete, and persistent list interactions for daily productivity.',
           tags: ['React.js', 'JavaScript', 'CSS'],
@@ -65,17 +110,7 @@
           github: 'https://github.com',
           demo: '#'
         },
-        {
-          title: 'CRUD Website',
-          desc: 'Full-stack CRUD project for managing records through forms, backend routes, and database operations.',
-          tags: ['Laravel', 'PHP', 'MySQL', 'Bootstrap'],
-          features: ['Create and edit records', 'Backend routes', 'Database operations'],
-          filters: ['web', 'fullstack'],
-          color: '#ff2d20',
-          icon: 'fa-solid fa-table-list',
-          github: 'https://github.com',
-          demo: '#'
-        },
+       
         {
           title: 'Calculator',
           desc: 'Lightweight calculator with keyboard-friendly arithmetic operations and a simple responsive interface.',
@@ -97,47 +132,16 @@
           icon: 'fa-solid fa-chart-line',
           github: 'https://github.com',
           demo: '#'
-        },
-        {
-          title: 'Online Voting System',
-          desc: 'A secure online voting platform where users can register, log in, view candidates, cast one vote, and see voting results.',
-          tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Bootstrap'],
-          features: ['JWT authentication', 'One vote per user', 'Admin election management', 'Result dashboard'],
-          filters: ['mern', 'node', 'fullstack', 'web'],
-          color: '#0ea5e9',
-          icon: 'fa-solid fa-square-poll-vertical',
-          github: '#',
-          demo: '#'
-        },
-        {
-          title: 'Online Banking System',
-          desc: 'A banking web application for account dashboards, balance checks, deposits, withdrawals, fund transfers, and transaction history.',
-          tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Bootstrap'],
-          features: ['User authentication', 'Deposit and withdrawal', 'Fund transfer', 'Transaction history'],
-          filters: ['mern', 'node', 'fullstack', 'web'],
-          color: '#14b8a6',
-          icon: 'fa-solid fa-building-columns',
-          github: '#',
-          demo: '#'
-        },
-        {
-          title: 'Online Hotel Booking System',
-          desc: 'A hotel booking platform where users can search hotels, view room details, book rooms, and manage bookings.',
-          tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Bootstrap'],
-          features: ['Room availability check', 'Booking confirmation', 'User booking history', 'Admin room management'],
-          filters: ['mern', 'node', 'fullstack', 'web'],
-          color: '#ec4899',
-          icon: 'fa-solid fa-hotel',
-          github: '#',
-          demo: '#'
         }
+      
+      
       ] %>
 
       <% projects.forEach(function(p) { %>
       <div class="col-md-6 col-lg-4 reveal project-item" data-filter="<%= p.filters.join(' ') %>">
         <div class="project-card h-100">
-          <div class="project-card__img" style="background: linear-gradient(135deg, <%= p.color %>33, <%= p.color %>11);">
-            <div class="project-card__icon" style="color:<%= p.color %>">
+          <div class="project-card__img" data-color="<%= p.color %>">
+            <div class="project-card__icon" data-color="<%= p.color %>">
               <i class="<%= p.icon %>"></i>
             </div>
             <div class="project-card__overlay">
@@ -192,5 +196,21 @@
     </a>
   </div>
 </section>
+
+<script>
+  document.querySelectorAll('.project-card__img').forEach(function(el) {
+    var color = el.dataset.color;
+    if (color) {
+      el.style.background = 'linear-gradient(135deg, ' + color + '33, ' + color + '11)';
+    }
+  });
+
+  document.querySelectorAll('.project-card__icon').forEach(function(el) {
+    var color = el.dataset.color;
+    if (color) {
+      el.style.color = color;
+    }
+  });
+</script>
 
 <%- include('footer') %>

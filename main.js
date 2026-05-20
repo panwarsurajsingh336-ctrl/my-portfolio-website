@@ -3,7 +3,7 @@
   if (!el) return;
 
   const words = [
-    'MERN Stack Developer',
+    'Full Stack Developer',
     'Laravel Developer',
     'Data Analytics Enthusiast',
   ];
